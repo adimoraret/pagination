@@ -4,7 +4,9 @@
   "description": "pagination algorithm implemented in ES6 using TDD",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.spec.js --require babel-core/register"
+    "test": "mocha test/**/*.spec.js --require babel-core/register",
+    "cover": "nyc --reporter=text mocha test/**/*.spec.js --require babel-core/register",
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
   }
 }
