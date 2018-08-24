@@ -77,7 +77,7 @@ describe('Navigation', () => {
     expect(lastPage).to.equal(3);
   });
 
-  if('should select current page when click a page', () => {
+  it('should select current page when click a page', () => {
     const pagination = new Pagination();
     pagination.init({
       items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
