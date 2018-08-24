@@ -65,6 +65,30 @@ describe('Navigation', () => {
     const currentPage = pagination.getCurrentPage();
     expect(currentPage).to.equal(1);
   });
+
+  it('should get the last page', () => {
+    const pagination = new Pagination();
+    pagination.init({
+      items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      itemsPerPage: 3,
+      currentPage: 2,
+    });
+    const lastPage = pagination.getLastPage();
+    expect(lastPage).to.equal(3);
+  });
+
+  if('should select current page when click a page', () => {
+    const pagination = new Pagination();
+    pagination.init({
+      items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      itemsPerPage: 3,
+      currentPage: 1,
+    });
+    pagination.clickPage(1);
+
+    const currentPage = pagination.getCurrentPage();
+    expect(currentPage).to.equal(1);
+  });
 });
 
 describe('Items pagination', () => {
